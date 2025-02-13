@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Firestore Dynamic CRUD</title>
+
+  <!-- Adding Google Font for a modern look -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS for Cisco-like appearance -->
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f6f9;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      color: #0073e6;
+      font-weight: 600;
+      margin-top: 20px;
+    }
+
+    section {
+      margin: 20px auto;
+      padding: 20px;
+      width: 80%;
+      max-width: 800px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    section h2 {
+      color: #005c99;
+      font-weight: 600;
+      border-bottom: 2px solid #e0e0e0;
+      padding-bottom: 8px;
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-size: 14px;
+      margin-bottom: 8px;
+      color: #666;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0 16px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+      color: #333;
+      background-color: #f9f9f9;
+    }
+
+    button {
+      padding: 12px 20px;
+      font-size: 16px;
+      color: #fff;
+      background-color: #0073e6;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #005bb5;
+    }
+
+    #readResults {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #e9f7fc;
+      border-left: 5px solid #0073e6;
+      color: #333;
+      font-size: 14px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group input {
+      width: 48%;
+      margin-right: 2%;
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+
+    .form-group input:last-child {
+      margin-right: 0;
+    }
+
+    .container {
+      width: 90%;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Firestore Dynamic CRUD Operations</h1>
+
+    <!-- Dynamic Create Item Section -->
+    <section>
+      <h2>Create Item</h2>
+      <div id="createFields"></div>
+      <button id="createButton">Create</button>
+    </section>
+
+    <!-- Dynamic Read Item Section -->
+    <section>
+      <h2>Read Item</h2>
+      <input type="text" id="readId" placeholder="Enter document ID">
+      <button id="readButton">Read</button>
+      <div id="readResults"></div>
+    </section>
+
+    <!-- Dynamic Update Item Section -->
+    <section>
+      <h2>Update Item</h2>
+      <input type="text" id="updateId" placeholder="Enter document ID to update">
+      <div id="updateFields"></div>
+      <button id="updateButton">Update</button>
+    </section>
+
+    <!-- Dynamic Delete Item Section -->
+    <section>
+      <h2>Delete Item</h2>
+      <input type="text" id="deleteId" placeholder="Enter document ID to delete">
+      <button id="deleteButton">Delete</button>
+    </section>
+  </div>
+  
+  <script type="module" src="./firestore-crud.js"></script>
+
+</body>
+</html>
